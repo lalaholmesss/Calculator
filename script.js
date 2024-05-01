@@ -10,12 +10,11 @@ function clearDisplay(){
 
 function calculate(){
     try{
-        display.value = eval(display.value)
+        display.value = display.value.replace("**", "*");
+        display.value = display.value.replace("^", "**");
+        display.value = eval(display.value);
     }
     catch(error){
-        display.value = "-_-"
+        display.value = "-_-";
     }  
-}
-function power(){
-    display.value = Math.pow(display.value, 2);
 }
